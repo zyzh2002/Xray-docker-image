@@ -30,8 +30,8 @@ fi
 [ -z "${ARCH}" ] && echo "Error: Not supported OS Architecture" && exit 1
 
 # Download files
-XRAY_FILE="xray-linux-${ARCH}.zip"
-DGST_FILE="xray-linux-${ARCH}.zip.dgst"
+XRAY_FILE="Xray-linux-${ARCH}.zip"
+DGST_FILE="Xray-linux-${ARCH}.zip.dgst"
 echo "Downloading binary file: ${XRAY_FILE}"
 echo "Downloading binary file: ${DGST_FILE}"
 
