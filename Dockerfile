@@ -1,5 +1,5 @@
 FROM --platform=${TARGETPLATFORM} alpine:latest
-LABEL maintainer="zyzh0 zyzh02@gmail.com"
+LABEL maintainer="zyzh0 <zyzh02@gmail.com>"
 
 WORKDIR /root
 ARG TARGETPLATFORM
@@ -10,8 +10,8 @@ RUN set -ex \
     && apk add --no-cache tzdata openssl ca-certificates \
     && mkdir -p /etc/xray /usr/local/share/xray /var/log/xray \
     # forward request and error logs to docker log collector
-    && ln -sf /dev/stdout /var/log/v2ray/access.log \
-    && ln -sf /dev/stderr /var/log/v2ray/error.log \
+    && ln -sf /dev/stdout /var/log/xray/access.log \
+    && ln -sf /dev/stderr /var/log/xray/error.log \
     && chmod +x /root/xray.sh \
     && /root/xray.sh "${TARGETPLATFORM}" "${TAG}"
 
