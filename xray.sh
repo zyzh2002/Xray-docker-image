@@ -45,7 +45,7 @@ echo "Download binary file: ${XRAY_FILE} ${DGST_FILE} completed"
 
 # Check SHA512
 XRAY_ZIP_HASH=$(openssl dgst -sha512 xray.zip | sed 's/([^)]*)//g')
-XRAY_ZIP_DGST_HASH=$(cat xray.zip.dgst | grep 'SHA512' | head -n1)
+XRAY_ZIP_DGST_HASH=$(cat xray.zip.dgst | grep 'SHA2-512' | head -n1)
 
 if [ "${XRAY_ZIP_HASH}" = "${XRAY_ZIP_DGST_HASH}" ]; then
     echo " Check passed" && rm -fv xray.zip.dgst
